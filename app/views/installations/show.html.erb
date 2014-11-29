@@ -1,0 +1,77 @@
+<%- model_class = Installation -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+<table class="table table-striped table-hover ">
+<thead>
+    <tr>
+      <th>Id</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>quantity</th>
+      <th>item.costs</th>
+    </tr>
+  </thead>
+<% @installation.comments.each do |comment| %>
+  <tbody>
+   <ul><tr>
+      <td>whatever</td>
+      <td><%= comment.description %></td>
+      <td>$<%= comment.price %></td>
+      <td><%= comment.quantity %></td>
+      <td>$<%= comment.subtotal %></td>
+    </tr></ul>
+<% end %>
+      </tbody>
+            <tr>
+    <td class="total price" colspan="4">
+      Total: <%= number_to_currency @installation.total_price %>
+    </td>
+  </tr>
+</table> 
+
+<table class="table table-striped table-hover ">
+ 
+<div class="row">
+    <div class="thumbnail">
+      <div class="caption">
+            <%= form_for([@installation, @installation.comments.build]) do |f| %>
+              <%= fields_for :comments, @installation.comments do |comments_fields| %>
+              <div class="col-sm-6 col-md-4">
+              <div class="field">
+                <%= f.label :description, :class => 'control-label' %>
+                <%= f.text_area :description, :class => 'form-control' %>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="field">
+                <%= f.label :price, :class => 'control-label' %>
+                <%= f.text_area :price, :class => 'form-control' %>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="field">
+                <%= f.label :quantity, :class => 'control-label' %>
+                <%= f.text_area :quantity, :class => 'form-control' %>
+              </div>
+            </div>
+          <% end %> 
+              <div class="actions">
+                <%= f.submit class: 'btn btn-success' %>
+              </div>
+
+            <% end %>
+ 
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              installations_path, :class => 'btn btn-default'  %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              installation_path(@installation),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
