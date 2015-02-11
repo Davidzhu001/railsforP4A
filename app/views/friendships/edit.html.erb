@@ -1,0 +1,37 @@
+<h2>Viewing friendship</h2>
+
+
+<div class="avatar span2">
+  <%= image_tag @friendship.user.gravatar_url, class: 'gravie' %><br />
+  <%= @friendship.user.name %>
+</div>
+<div class="avatar span2">
+  <%= image_tag @friendship.friend.gravatar_url, class: 'gravie' %><br />
+  <%= @friendship.friend.name %>
+</div>
+
+<p><%= @friendship.sub_message %></p>
+
+
+<% if @friendship.requested? %>
+  <div class="avatar span2">
+    <%= form_for @friendship, url: accept_friendship_path(@friendship), method: :put do |form| %>
+      <%= submit_tag "Accept friendship", class: "btn btn-success" %>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="avatar span2">
+  <%= form_for @friendship, url: friendship_path(@friendship), method: :delete do |form| %>
+    <%= submit_tag "Cancel friendship", class: "btn btn-danger" %>
+  <% end %>
+</div>
+
+<div class="avatar span2">
+  <% unless @friendship.state == 'blocked' %>
+    <%= form_for @friendship, url: block_friendship_path(@friendship), method: :put, data: { confirm: 'This action cannot be undone! Are you sure?' } do |form| %>
+      <%= submit_tag "Block user", class: "btn btn-warning" %>
+    <% end %>
+  <% end %>
+
+</div>

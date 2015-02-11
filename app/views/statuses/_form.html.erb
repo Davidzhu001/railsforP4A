@@ -1,0 +1,24 @@
+<%= form_for @status, remote: true do |f| %>
+<% if @status.errors.any? %>
+<div class="panel panel-danger">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= pluralize(@status.errors.count, "error") %> prohibited this status from being saved:</h3>
+  </div>
+  <div class="panel-body">
+    <ul>
+      <% @status.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<% end %>
+
+<div>
+  <%= f.text_area :content, class: "form-control former", rows: "3" %>
+</div>
+<div class="submitter">
+  <%= f.button "Submit", class: 'btn btn-primary', data: { disable_with: "<i class='fa fa-spinner fa-spin'></i> Loading..." } %>
+  <a href="#" class='btn btn-warning' id="canceller">Cancel</a>
+</div>
+<% end %>

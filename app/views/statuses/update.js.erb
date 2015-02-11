@@ -1,0 +1,3 @@
+$('#statuses').html("<%= j (render @statuses) %><div class='row row-centered'><%= j will_paginate @statuses %></div>");
+$('#status-form').slideUp(350);
+$('#statuses').trigger("statusesLoaded");

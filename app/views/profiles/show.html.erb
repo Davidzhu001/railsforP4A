@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="column">
+    <%= image_tag @user.gravatar_url, class: "gravie" %>
+  </div>
+  <div class="column">
+    <h2><%= @user.name %>'s Profile</h2>
+
+    <span id="friending">
+      <% unless current_user == @user %>
+        <% if current_user.friends.include?(@user) || current_user.pending_friends.include?(@user) %>
+          <%= link_to "Edit Friendship", edit_friendship_path(@friendship), class: "btn btn-warning" %>
+        <% elsif current_user.blocked_friends.include?(@user) %>
+          <span class="btn btn-success disabled">Add Friend</span>
+        <% else %>
+          <%= link_to "Add Friend", new_friendship_path(friend_id: @user.id), class: "btn btn-success", id: "add-friendship", data: { friend_id: @user.id } %>
+        <% end %>
+      <% end %>
+    </span>
+
+  </div>
+</div>
+
+<h3>Statuses</h3>
+
+<% @statuses.each do |status| %>
+<div class="status">
+  <p><%= status.content %></p>
+  <%= link_to time_ago_in_words(status.created_at) + " ago", status, class: "dimmed" %>
+  <% if current_user && (status.user == current_user || current_user.admin == true) %>
+  <span class="admin">
+    | <%= link_to 'Edit', edit_status_path(status), remote: true %>
+    | <%= link_to 'Delete', status, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+  </span>
+  <% end %>
+</div>
+<% end %>

@@ -1,0 +1,7 @@
+<h2>All Statuses</h2>
+
+<div><%= link_to 'New Status', new_status_path, class: "btn btn-default submitter", remote: true %></div>
+
+<div id="status-form" style="display:none;"></div>
+
+<div id="statuses"><%= render @statuses %><div class="row row-centered"><%= will_paginate @statuses %></div></div>

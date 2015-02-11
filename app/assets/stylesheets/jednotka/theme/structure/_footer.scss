@@ -1,0 +1,114 @@
+/* Foot */
+.foot {
+  border-top: 3px solid;
+  margin-top: 0 px;
+  padding: 15px 0px;
+  background-color: $body-bg;
+  color: #aaa;
+}
+.foot .foot-item {
+  margin: 15px auto;
+  max-width: 500px;
+}
+@media (max-width: 991px) {
+  .foot .foot-item {
+    margin-bottom: 35px;
+  }
+}
+.foot .foot-item h5 {
+  color: #ccc;
+  font-size: 13px;
+  line-height: 0px;
+  margin-bottom: 20px;
+}
+.foot .foot-item p {
+  margin: 0px;
+}
+.foot .foot-item a {
+  color: #bbb;
+}
+.foot .foot-item a:hover {
+  color: #ccc;
+}
+.foot .foot-item .brand-bg {
+  margin: 10px 0px 20px 0px;
+}
+.foot .foot-item .subscribe-box {
+  margin-top: 20px;
+}
+.foot .foot-item .subscribe-box .input-group {
+  max-width: 250px;
+  margin-top: 20px;
+}
+.foot .foot-item ul li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 5px 0px;
+}
+.foot .foot-item ul li:last-child {
+  border-bottom: 0px;
+}
+.foot .foot-item ul li :before {
+  line-height: 30px;
+  font-family: FontAwesome;
+  content: "\f105";
+  font-size: 13px;
+  margin-right: 7px;
+  font-weight: normal;
+  color: #ccc;
+}
+.foot .foot-item .foot-recent-img a img {
+  max-width: 75px;
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+.foot .foot-item .foot-recent-img a img.img-thumbnail {
+  padding: 1px;
+  border-radius: 2px;
+}
+.foot .foot-item .address h6 {
+  color: #ccc;
+  font-size: 13px;
+} 
+.foot .foot-item .address h6 i {
+  font-size: 14px;
+}
+.foot .foot-item .address p i {
+  font-size: 14px;
+  margin-right: 8px;
+  color: #ccc;
+}
+.foot .foot-item .address p.add {
+  margin-left: 20px;
+}
+.foot .foot-item .address p.tel {
+  line-height: 35px;
+}
+/* Footer */
+footer {
+  padding: 15px 10px 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 12px;
+  background-color: $body-bg;
+  color: #ccc;
+}
+footer a {
+  color: #ccc;
+}
+footer a:hover {
+  color: #aaa;
+}
+@media (max-width: 767px) {
+  footer .pull-left,
+  footer .pull-right {
+    float: none !important;
+    text-align: center;
+  }
+}
+/* UI designs */
+.ui-designs img{
+  margin:15px auto;
+  max-width:350px;
+  width:100%;
+  box-shadow:inset 0px 0px 5px rgba(0,0,0,0.1);
+}

@@ -1,0 +1,112 @@
+
+/* Top bar */
+.top-bar {
+	background-color: $body-bg;
+	color: #999;
+	padding: 6px 0px;
+	font-size: 13px;
+	line-height: 25px;
+	border-bottom: 1px solid #f5f5f5;
+}
+.top-bar a {
+	color: #999;
+}
+@media (max-width: 785px) {
+	.top-bar .tb-contact {
+		display: none;
+	}
+}
+.top-bar .tb-search {
+	position: relative;
+	display:none;
+}
+.top-bar .tb-search .b-dropdown-block {
+	padding: 7px;
+	border: 1px solid #ddd;
+	width: 250px;
+	position: absolute;
+	background: #ffffff;
+	top: 30px;
+	left: 0px;
+	border-radius: 2px;
+	box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);
+	display: none;
+	z-index: 10000;
+}
+@media (max-width: 785px) {
+	.top-bar .tb-search {
+		display: block;
+	}
+}
+.top-bar .tb-social {
+	margin-right: 10px;
+}
+.top-bar .tb-social i {
+	font-size: 13px;
+	margin: 0px;
+	margin-right: 2px;
+}
+@media (max-width:785px){
+	.top-bar .tb-social{
+		display:none;
+	}
+}
+.top-bar .tb-shopping-cart {
+	position: relative;
+	margin-left: 15px;
+}
+.top-bar .tb-shopping-cart i {
+	font-size: 14px;
+}
+.top-bar .tb-shopping-cart .b-dropdown-block {
+	width: 250px;
+	background: #ffffff;
+	right: 0px;
+	border: 1px solid #e2e2e2;
+	position: absolute;
+	margin-top: 5px;
+	z-index: 10000;
+	padding: 10px 10px;
+	border-radius: 5px;
+	box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+	display: none;
+}
+.top-bar .tb-shopping-cart .b-dropdown-block h4 {
+	font-size: 13px;
+	font-weight: 600;
+	margin-top: 0px;
+	padding-top: 0px;
+	border-bottom: 1px dashed #eee;
+}
+.top-bar .tb-shopping-cart .b-dropdown-block ul li {
+	padding: 10px 0px;
+	border-bottom: 1px dashed #eee;
+}
+.top-bar .tb-shopping-cart .cart-img {
+	width: 40px;
+	float: left;
+}
+.top-bar .tb-shopping-cart .cart-title {
+	position: relative;
+	margin-left: 50px;
+}
+.top-bar .tb-shopping-cart .cart-title h5 {
+	font-size: 13px;
+	line-height: 23px;
+	font-weight:400;
+}
+.top-bar .tb-shopping-cart .cart-title h5 a {
+	color: #666666;
+}
+.top-bar .tb-shopping-cart .cart-title h5 a:hover {
+	color: #808080;
+}
+.top-bar .tb-language {
+	margin-left: 10px;
+}
+.top-bar .tb-language a {
+	color: #888;
+}
+.top-bar .tb-language a:hover {
+	color: #666;
+}

@@ -1,0 +1,7 @@
+$('#status-form').html("<%= j (render 'form') %>");
+$('#canceller').click(function (e) {
+  e.preventDefault();
+  $('#status-form').slideUp(350);
+  $('#status-form').html("");
+});
+$('#status-form').slideDown(350);

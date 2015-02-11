@@ -1,0 +1,35 @@
+<h2>Friends List</h2>
+
+<div class="list-buttons">
+  <%= link_to "All", friendships_path, class: "btn btn-sm btn-default" %>
+  <%= link_to "Active", friendships_path(list: 'accepted'), class: "btn btn-sm btn-default" %>
+  <%= link_to "Pending", friendships_path(list: 'pending'), class: "btn btn-sm btn-default" %>
+  <%= link_to "Requested", friendships_path(list: 'requested'), class: "btn btn-sm btn-default" %>
+  <%= link_to "Blocked", friendships_path(list: 'blocked'), class: "btn btn-sm btn-default" %>
+</div>
+
+<div>
+  <% if @friendships.empty? %>
+  <p>There are no friendships to view! Don't be shy, add some friends :)</p>
+  <% end %>
+
+  <table class="friendship">
+    <% @friendships.each do |friendship| %>
+    <% friend = friendship.friend %>
+    <tr id="<%= dom_id(friendship) %>">
+      <td>
+        <%= image_tag friend.gravatar_url, class: "gravie" %>
+      </td>
+      <td>
+        <strong><%= link_to friend.name, profiles_path(friend) %></strong>
+      </td>
+      <td>
+        <p class="<%= friendship.state_color_class %>"><%= friendship.friendship_state %></p>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_friendship_path(friendship), class: "btn btn-xs btn-warning" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+</div>
