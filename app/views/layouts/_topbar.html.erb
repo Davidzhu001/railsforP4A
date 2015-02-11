@@ -10,21 +10,13 @@
 			<i class="fa fa-phone color"></i> &nbsp; +1 (342)-(323)-4923
 		</div>
 		<!-- Contact ends -->
-		
-		<% if current_user %>
 		<!-- Langauge starts -->
 		<div class="tb-language dropdown pull-right">
 			<a href="#" data-target="#" data-toggle="dropdown"><i class="fa fa-user"></i> User <i class="fa fa-angle-down color"></i></a>
 			<!-- Dropdown menu with languages -->
 			<ul class="dropdown-menu dropdown-mini" role="menu">
-				<li><%= link_to "All Statuses", statuses_path %></li>
-				<li><a href="#"><%= link_to "Profile", profiles_path(current_user) %></a></li>
-				<li><a href="#"><%= link_to "Settings", edit_user_registration_path %></a></li>
-				<li><%= link_to "Log Out", logout_path, method: :delete %></li>
-				<% else %>
 	         	<li><%= link_to "Register", register_path %></li>
 	            <li><%= link_to "Log In", login_path %></li>
-	           <% end %>
 			</ul>
 		</div>
 		<!-- Language ends -->
