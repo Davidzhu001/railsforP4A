@@ -28,12 +28,6 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
 
-
-  def combined_statuses
-    (friends.map(&:statuses) + statuses).flatten.
-      sort_by {|status| status.created_at}.reverse!
-  end
-
   def slug_candidates
     [
       :name,

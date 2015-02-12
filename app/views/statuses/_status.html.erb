@@ -18,7 +18,7 @@
         </ul>
       </div>
       <% end %>
-      <p style="color: HoneyDew "><%= status.content %></p>
+      <p><%= status.content %></p>
       <%= link_to time_ago_in_words(status.created_at) + " ago", status, class: "dimmed" %>
 
       <span id="<%= status.id %>" class="voting pull-right">

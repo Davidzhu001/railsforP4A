@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.0'
-gem 'bootstrap-sass'
-gem 'bootswatch-rails'
-gem 'sass-rails'
+gem 'bootstrap-sass', '~> 3.3.3'
+gem 'bootswatch-rails', '~> 3.2.4'
+gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
-gem 'devise'
+gem 'devise', '~> 3.4.1'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
@@ -31,8 +31,15 @@ gem 'will_paginate', '~> 3.0.7'
 
 group :development do
   gem 'quiet_assets', '~> 1.1.0'
+  #gem 'rails-erd', github: 'ready4god2513/rails-erd', branch: 'rails-4.2-support-fix'
 end
 
+group :test do
+  gem 'faker', '~> 1.4.3'
+  gem 'database_cleaner', '~> 1.4.0'
+  gem 'launchy', '~> 2.4.3'
+  gem 'shoulda-matchers', '~> 2.7.0', require: false
+end
 
 group :development, :test do
   gem 'sqlite3'
@@ -48,5 +55,3 @@ group :production do
   gem 'rails_12factor'
   gem 'pg'
 end
-
-gem "compass-rails"

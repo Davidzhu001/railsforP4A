@@ -20,7 +20,7 @@
   </div>
 </div>
 
-<h3>Statuses</h3>
+<h3>User's statuses</h3>
 
 <% @statuses.each do |status| %>
 <div class="status">
@@ -28,8 +28,6 @@
   <%= link_to time_ago_in_words(status.created_at) + " ago", status, class: "dimmed" %>
   <% if current_user && (status.user == current_user || current_user.admin == true) %>
   <span class="admin">
-    | <%= link_to 'Edit', edit_status_path(status), remote: true %>
-    | <%= link_to 'Delete', status, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
   </span>
   <% end %>
 </div>

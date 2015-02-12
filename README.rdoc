@@ -4,10 +4,13 @@ Social media app based on an outdated Treehouse course, completely rewritten and
 
 * Fix feature tests
 * Better UI
-* Nicer pagination buttons
 * Scope statuses instead of hiding blocked user statuses in views
 * Make Friendship listing more dynamic
 * Implement a working mailer
+* Add commenting
+* Fix status show view
+* Work on profile pages
+* Add photo uploading (Paperclip?)
 * ...
 
 Up-to-date live demo always available at: https://peaceful-tor-6610.herokuapp.com

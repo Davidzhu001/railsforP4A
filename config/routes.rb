@@ -1,12 +1,4 @@
 Rails.application.routes.draw do
-  get 'home/home'
-
-  get 'home/index'
-
-  get 'home/contact'
-
-  get 'home/information'
-
   get 'profiles/:id' => 'profiles#show', as: 'profiles'
 
   as :user do
@@ -37,5 +29,5 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'home#home'
+  root 'statuses#index'
 end

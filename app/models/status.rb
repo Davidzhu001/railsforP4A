@@ -9,5 +9,4 @@ class Status < ActiveRecord::Base
   self.per_page = 10
 
   scope :all_statuses, -> (ids) { where("user_id IN (?)", ids) }
-
 end
