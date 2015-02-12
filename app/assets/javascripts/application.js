@@ -18,5 +18,3 @@
 //= require statuses
 //= require js-routes
 //= require friendships
-//= require main
-//= require html5shiv
